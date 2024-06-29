@@ -17,11 +17,13 @@ public class Client: NSObject, StreamDelegate  {
     private var connecting:Bool
     
     public var numberPlayers:Int32 = 0
+    public var connected:Bool = false
     
     
     init(ip:String) {
         serverAddress = ip as CFString
         self.connecting = false
+        self.connected = false
         super.init()
         connect()
     }
@@ -60,17 +62,21 @@ public class Client: NSObject, StreamDelegate  {
     
     
     public func sendMessagePacket(packetID:Int, message:String){
-        print("sending message...")
-        sendInt32(number: 100) // status
-        sendInt32(number: packetID) // packetID
-        sendString(string: message) // message
+        if(self.connected){
+            print("sending message...")
+            sendInt32(number: 100) // status
+            sendInt32(number: packetID) // packetID
+            sendString(string: message) // message
+        }
     }
     
     public func sendPlayerRequestPacket(packetID:Int){
-        print("sending player request...")
-        sendInt32(number: 100) // status
-        sendInt32(number: packetID) // packetID
-        sendInt32(number: -1) // number that are on? invalid from client? idk
+        if(self.connected){
+            print("sending player request...")
+            sendInt32(number: 100) // status
+            sendInt32(number: packetID) // packetID
+            sendInt32(number: -1) // number that are on? invalid from client? idk
+        }
     }
     
     
@@ -133,6 +139,9 @@ public class Client: NSObject, StreamDelegate  {
     public func stream(_ stream: Stream, handle eventCode: Stream.Event) {
         if stream === inputStream {
             switch eventCode {
+            case .openCompleted:
+                print("Connection opened successfully.")
+                self.connected = true
             case Stream.Event.errorOccurred:
                 print("Input: ErrorOccurred")
             case Stream.Event.openCompleted:
@@ -160,22 +169,6 @@ public class Client: NSObject, StreamDelegate  {
             }
         }
         
-    }
-
-    
-    
-    func bigEndianDataToInt(_ data: Data) -> Int? {
-        guard data.count == 4 else {
-            print("Data length is not valid for an Int32 conversion.")
-            return nil
-        }
-        
-        // Combine the bytes to form the integer, assuming data is in big-endian format
-        let value = data.withUnsafeBytes { (pointer: UnsafeRawBufferPointer) -> UInt32 in
-            return pointer.load(as: UInt32.self).bigEndian
-        }
-        
-        return Int(value)
     }
     
     
