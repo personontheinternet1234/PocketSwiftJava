@@ -1,4 +1,4 @@
-package com.personontheinternet.pocket.network;
+package com.personontheinternet.pocketjava.network;
 
 import java.util.HashMap;
 

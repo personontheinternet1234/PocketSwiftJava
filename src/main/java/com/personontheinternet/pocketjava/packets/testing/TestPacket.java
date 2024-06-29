@@ -1,7 +1,7 @@
-package com.personontheinternet.pocket.packets.testing;
+package com.personontheinternet.pocketjava.packets.testing;
 
-import com.personontheinternet.pocket.network.Connection;
-import com.personontheinternet.pocket.network.Packet;
+import com.personontheinternet.pocketjava.network.Connection;
+import com.personontheinternet.pocketjava.network.Packet;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;

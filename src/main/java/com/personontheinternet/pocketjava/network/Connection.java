@@ -1,7 +1,7 @@
-package com.personontheinternet.pocket.network;
+package com.personontheinternet.pocketjava.network;
 
 
-import com.personontheinternet.pocket.Server;
+import com.personontheinternet.pocketjava.Server;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;

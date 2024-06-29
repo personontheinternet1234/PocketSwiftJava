@@ -1,6 +1,6 @@
-package com.personontheinternet.pocket.sql;
+package com.personontheinternet.pocketjava.sql;
 
-import com.personontheinternet.pocket.Server;
+import com.personontheinternet.pocketjava.Server;
 import org.mariadb.jdbc.Connection;
 
 import java.sql.DriverManager;

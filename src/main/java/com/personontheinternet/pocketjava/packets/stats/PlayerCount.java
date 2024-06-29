@@ -1,8 +1,8 @@
-package com.personontheinternet.pocket.packets.stats;
+package com.personontheinternet.pocketjava.packets.stats;
 
-import com.personontheinternet.pocket.Server;
-import com.personontheinternet.pocket.network.Connection;
-import com.personontheinternet.pocket.network.Packet;
+import com.personontheinternet.pocketjava.Server;
+import com.personontheinternet.pocketjava.network.Connection;
+import com.personontheinternet.pocketjava.network.Packet;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;

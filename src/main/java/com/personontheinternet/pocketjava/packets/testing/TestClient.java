@@ -1,9 +1,9 @@
-package com.personontheinternet.pocket.packets.testing;
+package com.personontheinternet.pocketjava.packets.testing;
 
-import com.personontheinternet.pocket.network.Connection;
-import com.personontheinternet.pocket.network.PacketHandler;
-import com.personontheinternet.pocket.packets.app.SwiftPacket;
-import com.personontheinternet.pocket.packets.stats.PlayerCount;
+import com.personontheinternet.pocketjava.network.Connection;
+import com.personontheinternet.pocketjava.network.PacketHandler;
+import com.personontheinternet.pocketjava.packets.app.SwiftPacket;
+import com.personontheinternet.pocketjava.packets.stats.PlayerCount;
 
 import java.io.BufferedReader;
 import java.io.IOException;

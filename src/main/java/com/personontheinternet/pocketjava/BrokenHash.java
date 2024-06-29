@@ -1,4 +1,4 @@
-package com.personontheinternet.pocket;
+package com.personontheinternet.pocketjava;
 
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
