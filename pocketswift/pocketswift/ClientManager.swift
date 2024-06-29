@@ -8,7 +8,7 @@
 import Foundation
 
 public class ClientManager {
-    public var client:Client = Client(ip:"localhost")
+    public var client:Client = Client(ip:"localhost", port:"25501")
     
     private init() {
         

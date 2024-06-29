@@ -10,7 +10,7 @@ import Network
 public class Client: NSObject, StreamDelegate  {
     
     var serverAddress: CFString
-    let serverPort: UInt32 = 25501
+    var serverPort: UInt32 = 25501
     
     private var inputStream: InputStream!
     private var outputStream: OutputStream!
@@ -20,8 +20,9 @@ public class Client: NSObject, StreamDelegate  {
     public var connected:Bool = false
     
     
-    init(ip:String) {
-        serverAddress = ip as CFString
+    init(ip:String, port:String) {
+        self.serverAddress = ip as CFString
+        self.serverPort = UInt32(port) ?? 0
         self.connecting = false
         self.connected = false
         super.init()
